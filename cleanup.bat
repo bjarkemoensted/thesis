@@ -1,0 +1,10 @@
+@echo off
+cd %~dp0
+del *.log
+del *.toc
+del *.gz
+del *.out
+del *.blg
+del *.bbl
+del *.dvi
+del *.aux

@@ -1,0 +1,97 @@
+\input{stuff/preamble}
+\include{stuff/chapterCP3} %include fancy chapter page style
+%\pdfsuppresswarningpagegroup=1  %Yolo!
+
+\newcommand{\thesistitle}{
+\HRule \\[2mm] % Horizontal line
+{\huge \bfseries \textsc{Fra Hades \\[1mm]
+		of \\[1mm]
+		Doom
+	}}\\[2mm]
+	\HRule \\[1.5cm] % Horizontal line	
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\thistitle}{My Title May Be Too Long}
+\newcommand{\thisauthor}{My Name}
+
+\title{\texorpdfstring{\Large\color{rossoCP3}\thistitle}{\thistitle}} %Sørger for at der ikke er LaTeX kode i din pdf-fil's hyperlinks.
+\author{\thisauthor}
+
+%Set this to false for drafts. It imports a cute kitten instead of your code because that takes too long. Also, kittens are cute.
+\toggletrue{final}
+\begin{document}
+\pagenumbering{alph}
+\selectlanguage{english}
+
+\newgeometry{margin=3.775cm}
+	\include{stuff/front}
+\restoregeometry
+
+\thispagestyle{empty}
+\clearpage
+\ \thispagestyle{empty}\clearpage
+\pagenumbering{roman}
+
+\nnchapters{Acknowledgements}
+Thank you! Thank you all!
+
+
+\clearpage
+\begin{KeepFromToc} %Don't mention the table of contents in the table of contents. Unless you really like being meta
+  \tableofcontents
+\end{KeepFromToc}
+\fancyhead[LO]{\slshape \MakeUppercase{Contents}} \fancyhead[RE]{\slshape \MakeUppercase{Contents}}
+
+\nnchapters{English abstract}
+WORDS! SOOOOO MANY WORDS!
+
+
+\selectlanguage{danish}
+\nnchapters{Dansk sammenfatning}
+ORD! SAAAAAAAAAA MANGE ORD
+
+\selectlanguage{english}
+
+%\ \thispagestyle{empty}\clearpage
+\cleardoublepage
+\pagenumbering{arabic}
+
+\fancyhead[LO]{\slshape \rightmark}\fancyhead[RE]{\slshape \leftmark} %And we're helping the headers back to being two-sided
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%
+\part{Awesome title}
+\chapter[Short title]{I'm the title of a chapter}
+\initial{J}{eg} er et helt og aldeles nyt kapitel. Og dette \cite{key} er en litteraturreference. \lipsum[1]
+
+Check out these pictures as well.
+
+\begin{figure} %[htb]
+	\centering
+	\subbottom[Points drawn from to independent Gaussians. Points in {\color{moerkeroed} class a} and {\color{oldhat} class b} are now pictured along with their {\color{nude} maximally separating hyperplane}.]{%
+		\includegraphics[width=\figwidth, height=\dualheight, keepaspectratio]{pics/hyperplane_lin.pdf}
+	}\\
+	\subbottom[The points representing {\color{moerkeroed} class a} and {\color{oldhat}class b} have bee projected into a higher-dimensional space in which it is possible to construct a separating hyperplane whose {\color{nude} decision frontier} is also shown.]{%
+		\includegraphics[width=\figwidth, height=\dualheight, keepaspectratio]{pics/kernel_example.pdf}}
+	\caption{Comparison of the performance of support vector machines with and without the kernel trick.}
+\end{figure}
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\appendix
+\chapter{Appendix}
+Put appendix here. Also, have some code:
+%\code{code/script.py}
+
+
+
+\fancyhead[LO]{\slshape \MakeUppercase{Bibliography}} \fancyhead[RE]{\slshape \MakeUppercase{Bibliography}}  %The bibliography header needs to be special too.
+\bibliography{litterature}
+\bibliographystyle{plain}
+
+\end{document}
+
